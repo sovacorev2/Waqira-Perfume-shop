@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waqira shop - Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Basic styles for menu toggle on small screens */
+    .menu-toggle {
+        display: none; /* Hidden on larger screens */
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1000;
+    }
+    #main-nav ul {
+        display: flex; /* Default to flex for larger screens */
+    }
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: block; /* Show on small screens */
+        }
+        #main-nav ul {
+            display: none; /* Hide by default on small screens */
+            flex-direction: column;
+            width: 100%;
+            background-color: #222;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 999;
+        }
+        #main-nav ul.active {
+            display: flex; /* Show when active */
+        }
+        #main-nav li {
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+    }
+  </style>
+</head>
+<body class="font-sans bg-[#faf3e0] text-[#333]">
+  <!-- Brand Header with Logo -->
+  <header class="site-header text-center bg-[#111] text-white py-8 relative">
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <h1 class="m-0 text-5xl tracking-widest text-white">Waqira Shop</h1>
+    <p class="m-0 text-lg italic text-[#ccc]">Your go-to online Fragrance shop</p>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav id="main-nav" class="relative bg-[#222]">
+    <ul class="list-none m-0 p-0 text-center md:flex md:justify-center">
+     <li><a href="index.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Home</a></li>
+      <li><a href="About.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">About</a></li>
+      <li><a href="Products.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Products</a></li>
+      <li><a href="Contact.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Contact</a></li>
+       <li><a href="order.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Order</a></li>
+      <li><a href="Premium Collections.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Premium Collections</a></li> 
+      <li><a href="carty.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Cart</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <section class="p-5 m-5 bg-white rounded-md shadow-md">
+    <h2 class="text-[#222] text-3xl font-bold mb-4">Contact us</h2>
+    <p class="mb-4"><strong>We'd love to hear from you!</strong></p>
+    <!-- Contact Section -->
+<section class="py-12 md:py-16 bg-gray-50" id="contact">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10 md:mb-12">
+      <marquee direction="left" scrollamount="10"><h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Get in Touch with Waqira Shop</h2></marquee>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        We're here to help! Reach out to us via call, WhatsApp, email, or visit our physical store.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+      <!-- Left: Contact Methods (Interactive Cards) -->
+      <div class="space-y-6">
+        <!-- Call Us -->
+        <a href="tel:+254714165394" class="group flex items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-blue-500">
+          <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full mr-5 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800 group-hover:text-blue-600">Call Us Now</h3>
+            <p class="text-gray-600">+254 714 165 394 / +254 742 163 191</p>
+            <p class="text-sm text-gray-500 mt-1">Available Mon–Sat, 8AM–6PM</p>
+          </div>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/254714165394?text=Hello%20Waqira%20Shop%21%20I%20would%20like%20to%20inquire%20about..." target="_blank" class="group flex items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-green-500">
+          <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-green-100 text-green-600 rounded-full mr-5 group-hover:bg-green-600 group-hover:text-white transition-colors">
+            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12c0 2.42.79 4.66 2.11 6.46L2 22l3.54-2.11C7.34 21.21 9.58 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm3.92 14.38c-.24.67-.47 1.21-1.03 1.38-.56.17-1.24.25-2.02.07-.78-.18-1.67-.56-2.71-1.13-1.04-.57-1.96-1.31-2.71-2.14-.75-.83-1.35-1.79-1.71-2.85-.36-1.06-.39-2.07-.09-2.81.3-.74.85-1.27 1.52-1.51.67-.24 1.42-.11 2.09.37.67.48 1.29 1.13 1.87 1.92.58.79.94 1.64 1.05 2.51.11.87-.02 1.71-.36 2.38z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800 group-hover:text-green-600">Message on WhatsApp</h3>
+            <p class="text-gray-600">+254 714 165 394 / +254 742 163 191</p>
+            <p class="text-sm text-gray-500 mt-1">Instant replies during business hours</p>
+          </div>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:waqiraadmin@gmail.com?subject=Inquiry%20from%20Website&body=Hello%20Waqira%20Team%2C%0A%0AI%20would%20like%20to%20inquire%20about..." class="group flex items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-indigo-500">
+          <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-indigo-100 text-indigo-600 rounded-full mr-5 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800 group-hover:text-indigo-600">Email Us</h3>
+            <p class="text-gray-600">waqiraadmin@gmail.com</p>
+            <p class="text-sm text-gray-500 mt-1">We usually reply within 24 hours</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Right: Visit Us (Map + Address) -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">Visit Our Store</h3>
+          <p class="text-gray-600 mb-4">
+            Waqira Shop<br>
+            Adjacent to University of Eldoret<br>
+            Eldoret, Kenya
+          </p>
+          <p class="text-sm text-gray-500 mb-4">
+            Open: Monday – Saturday<br>
+            8:00 AM – 6:00 PM
+          </p>
+        </div>
+
+        <!-- Google Maps Embed (replace with your actual location) -->
+        <div class="h-64 md:h-80">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8123456789!2d35.275678314757!3d0.51567809912345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMDDCsDMwJzU2LjQiTiAzNcKwMTYnMzIuNCJF!5e0!3m2!1sen!2ske!4v1698765432109" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    </p>
+  </section>
+
+  <!-- Scroll-to-top button -->
+  <button id="scrollTopBtn" title="Back to top">&#8593;</button>
+
+  <script src="waqira-scripts.js"></script>
+</body>
+</html>

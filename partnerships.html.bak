@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waqira Shop - Partnerships</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-[#faf3e0] text-[#333]">
+  <!-- Brand Header with Logo -->
+  <header class="site-header text-center bg-[#111] text-white py-8 relative">
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <h1 class="m-0 text-5xl tracking-widest text-white">Waqira Shop</h1>
+    <p class="m-0 text-lg italic text-[#ccc]">Your go-to online Fragrance shop</p>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav id="main-nav" class="relative bg-[#222]">
+    <ul class="list-none m-0 p-0 text-center md:flex md:justify-center">
+      <li><a href="index.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Home</a></li>
+      <li><a href="About.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">About</a></li>
+      <li><a href="Products.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Products</a></li>
+      <li><a href="Contact.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Contact</a></li>
+      <li><a href="order.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Order</a></li>
+      <li><a href="Premium Collections.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Premium Collections</a></li>
+      <li><a href="partnerships.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Partnerships</a></li>
+      <li><a href="carty.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Cart</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <section class="p-5 m-5 bg-white rounded-md shadow-md">
+    <h2 class="text-[#222] text-3xl font-bold mb-4">Our Partnerships</h2>
+    <p class="mb-4">Waqira Perfumes is proud to collaborate with leading brands and suppliers to bring you the highest quality fragrances and services.</p>
+    <p class="mb-6">We believe in fostering strong relationships that enhance our product offerings and customer experience.</p>
+    
+    <h3 class="text-[#222] text-2xl font-semibold mb-3">Current Partners Include:</h3>
+    <ul class="list-disc list-inside ml-4 mb-6">
+      <li class="mb-2"><strong>Luxury Essence Co.</strong> - For exclusive rare oils and ingredients.</li>
+      <li class="mb-2"><strong>Global Bottle Designs</strong> - Innovators in elegant and sustainable perfume bottle manufacturing.</li>
+      <li class="mb-2"><strong>Aroma Logistics Solutions</strong> - Ensuring timely and secure delivery of your cherished fragrances worldwide.</li>
+    </ul>
+
+    <p>Interested in partnering with Waqira Shop? Please <a href="Contact.html" class="text-[#0066cc] hover:underline">contact us</a> to explore collaboration opportunities.</p>
+  </section>
+
+  <!-- Scroll-to-top button -->
+  <button id="scrollTopBtn" title="Back to top">&#8593;</button>
+
+  <script src="waqira scripts.js"></script>
+</body>
+</html>

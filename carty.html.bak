@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waqira Shop - Your Cart</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-[#faf3e0] text-[#333]">
+  <!-- Brand Header with Logo -->
+  <header class="site-header text-center bg-[#111] text-white py-8 relative">
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <h1 class="m-0 text-5xl tracking-widest text-white">Waqira Shop</h1>
+    <p class="m-0 text-lg italic text-[#ccc]">Your go-to online Fragrance shop</p>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav id="main-nav" class="relative bg-[#222]">
+    <ul class="list-none m-0 p-0 text-center md:flex md:justify-center">
+      <li><a href="index.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Home</a></li>
+      <li><a href="About.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">About</a></li>
+      <li><a href="Products.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Products</a></li>
+      <li><a href="Contact.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Contact</a></li>
+      <li><a href="order.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Order</a></li>
+      <li><a href="Premium Collections.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Premium Collections</a></li>
+      <li><a href="carty.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Cart</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <section class="p-5 m-5 bg-white rounded-md shadow-md">
+    <h2 class="text-[#222] text-3xl font-bold mb-4">Your Shopping Cart</h2>
+
+    <div class="overflow-x-auto">
+      <table class="cart-table min-w-full bg-white border border-gray-200">
+        <thead>
+          <tr>
+            <th class="px-4 py-2">Product</th>
+            <th class="px-4 py-2">ML</th>
+            <th class="px-4 py-2">Quantity</th>
+            <th class="px-4 py-2">Price</th>
+            <th class="px-4 py-2">Subtotal</th>
+            <th class="px-4 py-2">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="cart-items">
+          <!-- Cart items will be loaded here by JavaScript -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cart-summary text-right mt-6 pr-4">
+      <p class="text-xl font-bold">Total: Ksh <span id="cart-total">0.00</span></p>
+      <button class="checkout-btn bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-md mt-4">Proceed to Checkout</button>
+    </div>
+  </section>
+
+  <!-- Scroll-to-top button -->
+  <button id="scrollTopBtn" title="Back to top">&#8593;</button>
+
+  <script src="waqira-scripts.js"></script>
+</body>
+</html>

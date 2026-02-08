@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waqira shop - About Me</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Basic styles for menu toggle on small screens */
+    .menu-toggle {
+        display: none; /* Hidden on larger screens */
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1000;
+    }
+    #main-nav ul {
+        display: flex; /* Default to flex for larger screens */
+    }
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: block; /* Show on small screens */
+        }
+        #main-nav ul {
+            display: none; /* Hide by default on small screens */
+            flex-direction: column;
+            width: 100%;
+            background-color: #222;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 999;
+        }
+        #main-nav ul.active {
+            display: flex; /* Show when active */
+        }
+        #main-nav li {
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+    }
+  </style>
+</head>
+<body class="font-sans bg-[#faf3e0] text-[#333]">
+
+  <!-- Header -->
+  <header class="site-header text-center bg-[#111] text-white py-8 relative">
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <h1 class="m-0 text-5xl tracking-widest text-white">Waqira Shop</h1>
+    <p class="m-0 text-lg italic text-[#ccc]">Your go-to online Fragrance shop</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav id="main-nav" class="relative bg-[#222]">
+    <ul class="list-none m-0 p-0 text-center md:flex md:justify-center">
+      <li><a href="index.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Home</a></li>
+      <li><a href="About.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">About</a></li>
+      <li><a href="Products.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Products</a></li>
+      <li><a href="Contact.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Contact</a></li>
+      <li><a href="order.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Order</a></li>
+      <li><a href="Premium Collections.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Premium Collections</a></li>
+      <li><a href="carty.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Cart</a></li>
+    </ul>
+  </nav>
+
+  <!-- Content -->
+  <section class="p-5 m-5 bg-white rounded-md shadow-md">
+    <h2 class="text-[#222] text-3xl font-bold mb-4">About </h2>
+    <p class="mb-4">Waqira Perfumes is a premier destination for exquisite fragrances, dedicated to curating scents that capture elegance, mystery, and timeless sophistication.</p>
+  
+    <p class="mb-4"><em>Your satisfaction is my utmost priority!</em></p>
+
+    <!-- Images with interactive effect -->
+    <div class="home-images flex flex-wrap justify-center gap-6 my-10 mx-auto max-w-screen-lg px-5">
+      <div class="gallery-item w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 relative overflow-hidden bg-white rounded-lg shadow-md group">
+        <img src="uploads/Unique photo 1.jpg" alt="Fragrance 1" class="w-full h-64 sm:h-56 md:h-64 object-cover rounded-t-lg transition-all duration-300 group-hover:scale-110 max-w-full">
+        <div class="caption p-3 text-center text-gray-700 font-medium">Timeless Elegance</div>
+      </div>
+      <div class="gallery-item w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 relative overflow-hidden bg-white rounded-lg shadow-md group">
+        <img src="uploads/Unique photo 2.jpg " alt="Fragrance 2" class="w-full h-64 sm:h-56 md:h-64 object-cover rounded-t-lg transition-all duration-300 group-hover:scale-110 max-w-full">
+        <div class="caption p-3 text-center text-gray-700 font-medium">Mysterious Depth</div>
+      </div>
+      <div class="gallery-item w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 relative overflow-hidden bg-white rounded-lg shadow-md group">
+        <img src="uploads/Unique photo 3.jpg" alt="Fragrance 3" class="w-full h-64 sm:h-56 md:h-64 object-cover rounded-t-lg transition-all duration-300 group-hover:scale-110 max-w-full">
+        <div class="caption p-3 text-center text-gray-700 font-medium">Sophisticated Aura</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scroll-to-top button -->
+  <button id="scrollTopBtn" title="Back to top">&#8593;</button>
+
+  <!-- JavaScript – moved to the end so elements exist when it runs -->
+  <script src="waqira-scripts.js"></script>
+
+</body>
+</html>

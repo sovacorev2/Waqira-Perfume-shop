@@ -1,0 +1,179 @@
+/* ==========================================================================
+   Base / Reset
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Header & Logo
+   ========================================================================== */
+.site-header {
+  position: relative;          /* ← important: .menu-toggle is absolute to this */
+  background: #222;            /* assuming dark nav – adjust to your design */
+  color: white;
+  padding: 1rem;
+}
+
+.logo-wrapper {
+  text-align: center;          /* centers logo on all screens */
+}
+
+.logo-text,
+.site-title,
+h1,                          /* fallback if it's just an h1 */
+.waqira-shop-title {         /* ← pick ONE real class from your HTML */
+  font-size: 3.0rem;
+  margin: 0.3rem 0;
+  font-weight: bold;
+  line-height: 1.0;
+}
+
+/* ==========================================================================
+   Hamburger Menu Toggle
+   ========================================================================== */
+.menu-toggle {
+  display: none;               /* hidden on desktop */
+  position: absolute;
+  top: 1.1rem;
+  left: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* ==========================================================================
+   Desktop Navigation (default)
+   ========================================================================== */
+#main-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;                 /* better than padding on each link */
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+#main-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s;
+}
+
+#main-nav ul li a:hover {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   Mobile Menu (below 768px)
+   ========================================================================== */
+@media (max-width: 767px) {
+  .menu-toggle {
+    display: block;            /* show hamburger */
+  }
+
+  .logo-wrapper {
+    padding-left: 3.5rem;      /* make space for hamburger on left */
+  }
+
+  #main-nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #222;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    z-index: 999;
+  }
+
+  #main-nav ul.active {
+    max-height: 600px;         /* large enough for most menus */
+  }
+
+  #main-nav ul li {
+    border-bottom: 1px solid #444;
+  }
+
+  #main-nav ul li a {
+    padding: 1rem 1.5rem;
+    display: block;
+  }
+
+  /* Adjust logo size for mobile */
+  .logo-text,
+  .site-title,
+  h1,
+  .waqira-shop-title {
+    font-size: 2.2rem;         /* ← most balanced starting point */
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .logo-text,
+  .site-title,
+  h1,
+  .waqira-shop-title {
+    font-size: 1.8rem;
+  }
+
+  .menu-toggle {
+    font-size: 1.8rem;
+    top: 1rem;
+  }
+}
+
+/* ==========================================================================
+   Scroll to Top Button
+   ========================================================================== */
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: #444;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+  transition: all 0.3s;
+}
+
+#scrollTopBtn:hover {
+  background: #666;
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   Gallery hover effect
+   ========================================================================== */
+.gallery-item img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.gallery-item img:hover {
+  transform: scale(1.04) rotate(1.5deg); /* gentle tilt */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}

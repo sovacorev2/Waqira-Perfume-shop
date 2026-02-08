@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waqira Shop - Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Load Supabase JS client (required for authentication & storage) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  
+  <!-- Your script – rename the file to remove space! -->
+  <script type="module" src="waqira-scripts.js"></script> <!-- ← fixed name -->
+</head>
+<body class="font-sans bg-[#faf3e0] text-[#333] admin-page">
+
+  <!-- Brand Header with Logo -->
+  <header class="site-header text-center bg-[#111] text-white py-8 relative">
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <!-- Fix: ensure the logo file actually exists at this path -->
+    <img src="uploads/waqira logo.jpg" width="270" height="200" alt="Waqira Shop logo" class="mx-auto mb-4"/>
+    <h1 class="m-0 text-5xl tracking-widest text-white">Waqira Shop</h1>
+    <p class="m-0 text-lg italic text-[#ccc]">Admin Control Panel</p>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav id="main-nav" class="relative bg-[#222]">
+    <ul class="list-none m-0 p-0 text-center md:flex md:justify-center">
+      <li><a href="index.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Home</a></li>
+      <li><a href="Products.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Products (View)</a></li>
+      <li><a href="Premium Collections.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Premium Collections (View)</a></li>
+      <li><a href="#" id="admin-logout-btn" class="block px-5 py-3 text-white no-underline font-bold hover:bg-red-700">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Admin Login Modal -->
+  <div id="admin-login-modal" class="fixed inset-0 bg-gray-900 bg-opacity-80 flex items-center justify-center z-50">
+    <div class="bg-white p-8 rounded-lg shadow-xl max-w-sm w-full mx-4">
+      <h3 class="text-2xl font-bold mb-6 text-center text-[#222]">Admin Login</h3>
+      <form id="admin-login-form">
+        <div class="mb-4">
+          <label for="admin-email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+          <input type="email" id="admin-email" name="admin-email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+        </div>
+        <div class="mb-6">
+          <label for="admin-password" class="block text-gray-700 text-sm font-bold mb-2">Password:</label>
+          <input type="password" id="admin-password" name="admin-password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+        </div>
+        <p id="login-error-message" class="text-red-500 text-xs italic mb-4 text-center hidden"></p>
+        <button type="submit" class="bg-[#222] hover:bg-[#555] text-white font-bold py-2 px-4 rounded w-full focus:outline-none focus:shadow-outline transition">
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admin Content -->
+  <main id="admin-content" class="p-5 m-5 bg-white rounded-md shadow-md hidden">
+    <h2 class="text-[#222] text-3xl font-bold mb-6">Admin Dashboard</h2>
+
+    <!-- Tabs -->
+    <div class="mb-6 border-b border-gray-200">
+      <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="admin-tabs" role="tablist">
+        <li class="mr-2" role="presentation">
+          <button class="inline-block p-4 border-b-2 rounded-t-lg text-blue-600 border-blue-600 active-tab" id="products-tab" type="button" role="tab" aria-controls="product-management-section" aria-selected="true">Product Management</button>
+        </li>
+        <li class="mr-2" role="presentation">
+          <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300" id="images-tab" type="button" role="tab" aria-controls="image-management-section" aria-selected="false">Image Management</button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Product Management Section -->
+    <div id="product-management-section" role="tabpanel" aria-labelledby="products-tab">
+      <!-- ... (your existing product form + table here – unchanged) ... -->
+    </div>
+
+    <!-- Image Management Section -->
+    <div id="image-management-section" role="tabpanel" aria-labelledby="images-tab" class="hidden">
+      <!-- ... (your existing image upload + list here – unchanged) ... -->
+    </div>
+  </main>
+
+  <!-- Edit Modal (unchanged) -->
+  <!-- ... -->
+
+  <!-- Scroll-to-top button -->
+  <button id="scrollTopBtn" title="Back to top">↑</button>
+
+  <!-- Basic tab switching script (add this at bottom or in your JS file) -->
+  <script>
+    const tabs = document.querySelectorAll('#admin-tabs button');
+    const sections = {
+      'products-tab': document.getElementById('product-management-section'),
+      'images-tab': document.getElementById('image-management-section')
+    };
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active styles from all tabs
+        tabs.forEach(t => {
+          t.classList.remove('text-blue-600', 'border-blue-600');
+          t.classList.add('border-transparent', 'hover:text-gray-600', 'hover:border-gray-300');
+        });
+        // Add active to clicked tab
+        tab.classList.remove('border-transparent', 'hover:text-gray-600', 'hover:border-gray-300');
+        tab.classList.add('text-blue-600', 'border-blue-600');
+
+        // Hide all sections
+        Object.values(sections).forEach(sec => sec.classList.add('hidden'));
+        // Show selected section
+        sections[tab.id].classList.remove('hidden');
+      });
+    });
+  </script>
+</body>
+</html>

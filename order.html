@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waqira shop - Order Here</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Basic styles for menu toggle on small screens */
+    .menu-toggle {
+        display: none; /* Hidden on larger screens */
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1000;
+    }
+    #main-nav ul {
+        display: flex; /* Default to flex for larger screens */
+    }
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: block; /* Show on small screens */
+        }
+        #main-nav ul {
+            display: none; /* Hide by default on small screens */
+            flex-direction: column;
+            width: 100%;
+            background-color: #222;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 999;
+        }
+        #main-nav ul.active {
+            display: flex; /* Show when active */
+        }
+        #main-nav li {
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+    }
+  </style>
+</head>
+<body class="font-sans bg-[#faf3e0] text-[#333]">
+  <!-- Brand Header with Logo -->
+  <header class="site-header text-center bg-[#111] text-white py-8 relative">
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <h1 class="m-0 text-5xl tracking-widest text-white">Waqira Shop</h1>
+    <p class="m-0 text-lg italic text-[#ccc]">Your go-to online Fragrance shop </p>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav id="main-nav" class="relative bg-[#222]">
+    <ul class="list-none m-0 p-0 text-center md:flex md:justify-center">
+      <li><a href="index.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Home</a></li>
+      <li><a href="About.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">About</a></li>
+      <li><a href="Products.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Products</a></li>
+      <li><a href="Contact.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Contact</a></li>
+      <li><a href="order.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Order</a></li>
+      <li><a href="Premium Collections.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Premium Collections</a></li>
+      <li><a href="carty.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Cart</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <section class="p-5 m-5 bg-white rounded-md shadow-md">
+    <h2 class="text-[#222] text-3xl font-bold mb-4">Payment Options</h2>
+    <p class="mb-4">At WaqiraShop,Service delivery is paramount and the Payment options are friendly.The best service experience perceived</p>
+    
+    <!-- New Line Added -->
+    <p class="mb-4"><em>These are the payment options offered </em></p>
+
+    <!-- Display Cart Total -->
+    <div class="mb-6 text-xl font-bold text-right pr-4">
+      Order Total: Ksh <span id="order-page-cart-total">0.00</span>
+    </div>
+
+    <form id="order-form" class="space-y-6 mt-8">
+      <!-- 1. Delivery Details Section -->
+      <h3 class="text-2xl font-semibold mb-4 text-[#222]">Delivery Preferences</h3>
+      <div class="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-4 mb-4">
+        <label class="inline-flex items-center">
+          <input type="radio" name="delivery-option" value="delivery" class="form-radio text-green-600 h-5 w-5" checked>
+          <span class="ml-2 text-lg">Delivery</span>
+        </label>
+        <label class="inline-flex items-center">
+          <input type="radio" name="delivery-option" value="pickup" class="form-radio text-green-600 h-5 w-5">
+          <span class="ml-2 text-lg">Self-Pickup</span>
+        </label>
+      </div>
+
+      <!-- Delivery Details Form (initially shown) -->
+      <div id="delivery-details" class="space-y-4">
+        <div>
+          <label for="customer-name" class="block text-sm font-medium text-gray-700">Name of Customer <span class="text-red-500">*</span></label>
+          <input type="text" id="customer-name" name="customer-name" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" required>
+        </div>
+        <div>
+          <label for="delivery-location" class="block text-sm font-medium text-gray-700">Delivery Location (Exact Address / Description) <span class="text-red-500">*</span></label>
+          <textarea id="delivery-location" name="delivery-location" rows="3" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" required></textarea>
+        </div>
+        <div>
+          <label for="delivery-date" class="block text-sm font-medium text-gray-700">Preferred Delivery Date <span class="text-red-500">*</span></label>
+          <input type="date" id="delivery-date" name="delivery-date" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" required>
+        </div>
+        <div>
+          <label for="delivery-time" class="block text-sm font-medium text-gray-700">Preferred Delivery Time <span class="text-red-500">*</span></label>
+          <input type="time" id="delivery-time" name="delivery-time" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" required>
+        </div>
+      </div>
+
+      <!-- Self-Pickup Message (initially hidden) -->
+      <div id="pickup-details" class="hidden text-center p-4 border border-yellow-400 bg-yellow-50 rounded-md">
+        <p class="text-lg font-medium text-gray-800 mb-4">You can collect your items from Waqira shop, adjacent to the University of Eldoret. Please contact us at +254714165394.</p>
+        <a id="whatsapp-contact-btn" href="https://wa.me/254714165394?text=Hello,I would like to pick my order.Please direct me on what to do." target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-200">
+          Contact Us on WhatsApp
+        </a>
+      </div>
+
+      <!-- 2. Phone Number for Payment -->
+      <h3 class="text-2xl font-semibold mt-8 mb-4 text-[#222]">Payment Information</h3>
+      <div>
+        <label for="mpesa-phone-number" class="block text-sm font-medium text-gray-700">M-Pesa Phone Number (e.g., 2547XXXXXXXX) <span class="text-red-500">*</span></label>
+        <input type="tel" id="mpesa-phone-number" name="mpesa-phone-number" placeholder="e.g., 254712345678" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" required pattern="^2547\d{8}$">
+        <p class="mt-1 text-sm text-gray-500">Please enter your M-Pesa registered phone number starting with '2547'.</p>
+      </div>
+
+      <!-- 3. Pay Now Button -->
+      <button type="submit" id="pay-now-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md w-full mt-6">
+        Pay Now (Ksh <span id="pay-button-total">0.00</span>)
+      </button>
+    </form>
+  </section>
+  <!-- three Images Horizontally -->
+   <div class="text-center my-8 mx-auto max-w-lg flex flex-wrap justify-center items-center gap-4">
+  <img src="uploads/MPESA logo.jpg" alt="M-Pesa" class="inline-block w-24 h-auto object-contain max-w-full rounded-lg shadow-sm">
+  <img src="uploads/KCB logo.jpg" alt="KCB" class="inline-block w-20 h-auto object-contain max-w-full rounded-lg shadow-sm">
+  <img src="uploads/Cooperative logo.jpg" alt="Co-op Bank" class="inline-block w-20 h-auto object-contain max-w-full rounded-lg shadow-sm">
+</div>
+
+  <!-- Scroll-to-top button -->
+  <button id="scrollTopBtn" title="Back to top">&#8593;</button>
+
+  <script src="waqira-scripts.js"></script>
+</body>
+</html>

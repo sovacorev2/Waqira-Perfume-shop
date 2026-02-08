@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waqira Shop - My Products</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Supabase CDN for global Supabase object -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    /* Basic styles for menu toggle on small screens */
+    .menu-toggle {
+        display: none; /* Hidden on larger screens */
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1000;
+    }
+    #main-nav ul {
+        display: flex; /* Default to flex for larger screens */
+    }
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: block; /* Show on small screens */
+        }
+        #main-nav ul {
+            display: none; /* Hide by default on small screens */
+            flex-direction: column;
+            width: 100%;
+            background-color: #222;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 999;
+        }
+        #main-nav ul.active {
+            display: flex; /* Show when active */
+        }
+        #main-nav li {
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+    }
+  </style>
+</head>
+<body class="font-sans bg-[#faf3e0] text-[#333] products-page">
+  <!-- Brand Header with Logo -->
+  <header class="site-header text-center bg-[#111] text-white py-8 relative">
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <h1 class="m-0 text-5xl tracking-widest text-white">Waqira Shop</h1>
+    <p class="m-0 text-lg italic text-[#ccc]">Your go-to online shop for the finest perfumes</p>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav id="main-nav" class="relative bg-[#222]">
+    <ul class="list-none m-0 p-0 text-center md:flex md:justify-center">
+     <li><a href="index.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Home</a></li>
+      <li><a href="About.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">About</a></li>
+      <li><a href="Products.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Products</a></li>
+      <li><a href="Contact.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Contact</a></li>
+        <li><a href="order.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Order</a></li>
+              <li><a href="Premium Collections.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Premium Collections</a></li> 
+              <li><a href="carty.html" class="block px-5 py-3 text-white no-underline font-bold hover:bg-[#555]">Cart</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <section class="p-5 m-5 bg-white rounded-md shadow-md">
+    <h2 class="text-[#222] text-3xl font-bold mb-4">Products</h2>
+    <p class="mb-6"><strong>Our products include: Body Splash perfumes, Floral, Amber, Woody etc</strong></p>
+   
+    <div class="gallery-container max-w-screen-xl mx-auto px-5 my-10">
+      <div class="gallery-row top-row flex flex-wrap justify-center gap-6 mb-8">
+        <!-- 4 images here -->
+        <div class="gallery-item w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 relative overflow-hidden bg-white rounded-lg shadow-md group">
+          <img src="uploads/Perfume image 4.jpg" alt="Floral Dream" 
+               data-product-id="prod-001" data-product-name="Floral Dream" 
+               data-product-price="65" data-default-ml="50" data-available-ml="30,50,100"
+               class="w-full h-64 sm:h-56 md:h-64 object-cover rounded-t-lg transition-all duration-300 group-hover:scale-110 max-w-full">
+          <div class="caption p-3 text-center text-gray-700 font-medium">Floral Dream - Ksh 65</div>
+        </div>
+        <div class="gallery-item w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 relative overflow-hidden bg-white rounded-lg shadow-md group">
+          <img src="uploads/Perfume image 5.jpg" alt="Mystic Amber" 
+               data-product-id="prod-002" data-product-name="Mystic Amber" 
+               data-product-price="70" data-default-ml="50" data-available-ml="30,50,100"
+               class="w-full h-64 sm:h-56 md:h-64 object-cover rounded-t-lg transition-all duration-300 group-hover:scale-110 max-w-full">
+          <div class="caption p-3 text-center text-gray-700 font-medium">Mystic Amber - Ksh 70</div>
+        </div>
+        <div class="gallery-item w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 relative overflow-hidden bg-white rounded-lg shadow-md group">
+          <img src="uploads/Perfume image 6.jpg" alt="Woody Essence" 
+               data-product-id="prod-003" data-product-name="Woody Essence" 
+               data-product-price="75" data-default-ml="50" data-available-ml="30,50,100"
+               class="w-full h-64 sm:h-56 md:h-64 object-cover rounded-t-lg transition-all duration-300 group-hover:scale-110 max-w-full">
+          <div class="caption p-3 text-center text-gray-700 font-medium">Woody Essence - Ksh 75</div>
+        </div>
+        <div class="gallery-item w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 relative overflow-hidden bg-white rounded-lg shadow-md group">
+          <img src="uploads/Perfume image 7.jpg" alt="Fresh Citrus" 
+               data-product-id="prod-004" data-product-name="Fresh Citrus" 
+               data-product-price="60" data-default-ml="50" data-available-ml="30,50,100"
+               class="w-full h-64 sm:h-56 md:h-64 object-cover rounded-t-lg transition-all duration-300 group-hover:scale-110 max-w-full">
+          <div class="caption p-3 text-center text-gray-700 font-medium">Fresh Citrus - Ksh 60</div>
+        </div>
+      </div>
+
+      <div class="gallery-row bottom-row flex flex-wrap justify-center gap-6 mb-8 lg:max-w-screen-md mx-auto">
+        <!-- 4 images here -->
+        <div class="gallery-item w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 relative overflow-hidden bg-white rounded-lg shadow-md group">
+                    <img src="uploads/Perfume image 9.jpg" alt="Ocean Breeze" 
+               data-product-id="prod-005" data-product-name="Ocean Breeze" 
+               data-product-price="68" data-default-ml="50" data-available-ml="30,50,100"
+               class="w-full h-64 sm:h-56 md:h-64 object-cover rounded-t-lg transition-all duration-300 group-hover:scale-110 max-w-full">
+          <div class="caption p-3 text-center text-gray-700 font-medium">Ocean Breeze - Ksh 68</div>
+        </div>
+        <div class="gallery-item w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 relative overflow-hidden bg-white rounded-lg shadow-md group">
+          <img src="uploads/Perfume image 11.jpg" alt="Spicy Vanilla" 
+               data-product-id="prod-006" data-product-name="Spicy Vanilla" 
+               data-product-price="80" data-default-ml="50" data-available-ml="30,50,100"
+               class="w-full h-64 sm:h-56 md:h-64 object-cover rounded-t-lg transition-all duration-300 group-hover:scale-110 max-w-full">
+          <div class="caption p-3 text-center text-gray-700 font-medium">Spicy Vanilla - Ksh 80</div>
+        </div>
+        <div class="gallery-item w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 relative overflow-hidden bg-white rounded-lg shadow-md group">
+          <img src="uploads/Perfume image 12.jpg" alt="Green Tea Zen" 
+               data-product-id="prod-007" data-product-name="Green Tea Zen" 
+               data-product-price="62" data-default-ml="50" data-available-ml="30,50,100"
+               class="w-full h-64 sm:h-56 md:h-64 object-cover rounded-t-lg transition-all duration-300 group-hover:scale-110 max-w-full">
+          <div class="caption p-3 text-center text-gray-700 font-medium">Green Tea Zen - Ksh 62</div>
+        </div>
+        <div class="gallery-item w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 relative overflow-hidden bg-white rounded-lg shadow-md group">
+          <img src="uploads/Perfume image 13.jpg" alt="Royal Oud" 
+               data-product-id="prod-008" data-product-name="Royal Oud" 
+               data-product-price="95" data-default-ml="50" data-available-ml="30,50,100"
+               class="w-full h-64 sm:h-56 md:h-64 object-cover rounded-t-lg transition-all duration-300 group-hover:scale-110 max-w-full">
+          <div class="caption p-3 text-center text-gray-700 font-medium">Royal Oud - Ksh 95</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scroll-to-top button -->
+  <button id="scrollTopBtn" title="Back to top">&#8593;</button>
+
+  <script type="module" src="waqira-scripts.js"></script>
+</body>
+</html>
